@@ -3,7 +3,7 @@
 
 using namespace std;
 
-struct occupation {
+struct StudentInfo {
     string name = "";
     int age = 0;
     string course = "";
@@ -12,32 +12,36 @@ struct occupation {
     string gender = "";
 };
 
-void modifyInformation(Data &student);  
-void displayInformation(Data student);
+void inputInformation(StudentInfo &student);  
+void displayStudentInfo(StudentInfo student);
 
 int main() {
-    Data student1, student2, student3, student4;
+    StudentInfo student1, student2, student3, student4, student5;
 
     cout << "Enter details for Student 1:\n";
-    modifyInformation(student1);
-    displayInformation(student1); 
+    inputInformation(student1);
+    displayStudentInfo(student1); 
     
     cout << "\nEnter details for Student 2:\n";
-    modifyInformation(student2);
-    displayInformation(student2); 
+    inputInformation(student2);
+    displayStudentInfo(student2); 
     
     cout << "\nEnter details for Student 3:\n";
-    modifyInformation(student3);
-    displayInformation(student3); 
+    inputInformation(student3);
+    displayStudentInfo(student3); 
     
     cout << "\nEnter details for Student 4:\n";
-    modifyInformation(student4);
-    displayInformation(student4); 
+    inputInformation(student4);
+    displayStudentInfo(student4); 
+    
+    cout << "\nEnter details for Student 5:\n";
+    inputInformation(student5);
+    displayStudentInfo(student5); 
 
     return 0;
 }
 
-void modifyInformation(occupation &student) {
+void inputInformation(StudentInfo &student) {
     cout << "Enter Name\t:\t";
     getline(cin, student.name);
 
@@ -59,8 +63,7 @@ void modifyInformation(occupation &student) {
     getline(cin, student.gender);
 }
 
-void displayInformation(occupation student) {
+void displayStudentInfo(StudentInfo student) {
     cout << "\nStudent Information:\n";
     cout << student.name << " is a " << student.age << "-year-old " << student.gender << " taking " << student.course << ", currently in year " << student.year << ", block " << student.block << ".\n";
 }
-
